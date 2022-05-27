@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+<meta charset="UTF-8">
+<title>Pessoas</title>
+	  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/materialize/css/styles.css">
+	 <style type="text/css">
+	 	table.striped>tbody>tr:nth-child(odd) {
+	 	background-color: rgba(211, 211, 211, 0.5);
+	 	}
+	 	
+	 	form input[type=submit] {
+	 		color: white;
+	 	}
+	 
+	 </style>
+</head>
+    <nav>
+    <div class="nav-wrapper" >
+      <a href="/" class="brand-logo">Garage Control</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/arearestrita">Home</a></li>
+        <li><a href="/listapessoas">Pessoas</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Manutenção</a></li>
+        <li><a href="#">Administração</a></li>
+        <li><a href="/logout">Sair do Sistema</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Home</a>
+        <a href="/listapessoas" class="breadcrumb">Pessoas</a>
+        <a href="/cadastropessoa" class="breadcrumb">Cadastrar Pessoa</a>
+      </div>
+    </div>
+  </nav>
+
+<body>
+<div class="container">
+        <!-- Page Content goes here -->
+      
+<h1>Pessoas</h1>
+<h6>Lista todas as pessoas do sistema</h6>
+<br>
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Identidade</th>
+					<th>CPF</th>
+					<th>Sexo</th>
+					
+					<th>CEP</th>
+					<th>Rua</th>
+					<th>Número</th>
+					<th>Bairro</th>
+					<th>Complemento</th>
+					<th>Cidade</th>
+					<th>Estado</th>
+					<th>Editar</th>
+					<th>Excluir</th>
+				</tr>
+			</thead>
+			<tr th:each="pessoa : ${pessoas}">
+				<td th:text="${pessoa.id}"></td>
+				<td><a
+					th:href="@{/telefones/{idpessoa}(idpessoa=${pessoa.id})}"><span
+						th:text="${pessoa.nome}"> </span></a></td>
+				<td th:text="${pessoa.identidade}"></td>
+				<td th:text="${pessoa.cpf}"></td>
+				<td th:text="${pessoa.sexopessoa}"></td>
+				<td th:text="${pessoa.cep}"></td>
+				<td th:text="${pessoa.rua}"></td>
+				<td th:text="${pessoa.numero}"></td>
+				<td th:text="${pessoa.bairro}"></td>
+				<td th:text="${pessoa.comp}"></td>
+				<td th:text="${pessoa.cidade}"></td>
+				<td th:text="${pessoa.uf}"></td>
+				<td><a
+					th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a></td>
+				<td><a
+					th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Excluir</a>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<div th:each="m : ${msg}">
+			<span th:text="${m}"></span>
+		</div>
+		<br />
+		<br>
+		
+			<div class="row" >
+			<fieldset>
+		<legend>Campos de Pesquisa</legend>
+				<form action="pesquisarpessoa" method="post" class="col s12">
+					<div class="row">
+						<div class="input-field col s4">
+							<label for="nomepesquisa" class="active">Pesquisa por nome:</label>
+								<input name="nomepesquisa" id="nomepesquisa" class="validate">
+								</div>
+								
+								<div class="input-field col s4">
+							<label for="pesqsexo" class="active">Pesquisa Sexo</label>
+						    <select	class="browser-default" name="pesqsexo" id="pesqsexo">
+								<option value="">-- Todos --</option>
+								<option value="MASCULINO">Masculino</option>
+								<option value="FEMININO">Feminino</option>
+							</select>
+						</div>
+								<div class="input-field col s4">
+								<input class="waves-effect waves-light btn" type="submit" value="Buscar">
+								</div>
+						</div>
+					
+				</form>
+				</fieldset>
+			</div>
+		
+	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</div>
+</body>
+</html>

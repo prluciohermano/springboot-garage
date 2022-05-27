@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Garage Control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="/materialize/css/styles.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+ <style type="text/css">
+	 	table.striped>tbody>tr:nth-child(odd) {
+	 	background-color: rgba(211, 211, 211, 0.5);
+	 	}
+	 	
+	 	form input[type=submit] {
+	 		color: white;
+	 	}
+	 
+	 </style>
+</head>
+
+<body>
+<br><br><br><br><br><br>
+ <div class="container">
+ 	<h1>Acesso ao sistema</h1>
+ 	<h6>Entre com suas credenciais</h6>
+ 	<br><br>
+        <!-- Page Content goes here -->
+ 	<form th:action="@{/login}" method="post" class="col s12">
+ 		<div class="row">
+ 			<div class="input-field col s6">
+ 			<label>Login</label>
+ 			<input type="text" name="username">
+ 			</div>
+ 		</div>
+ 		<div class="row">
+ 			<div class="input-field col s6">
+ 			<label>Senha</label>
+ 			<input type="password" name="password">
+ 			</div>
+ 		</div>
+ 		<div class="row">
+			<div class="input-field col s6">
+	   			<input name="logar"  type="submit" value="Logar"
+	   			 class="waves-effect waves-light btn">
+	   		</div>
+		</div>
+ 	
+ 	</form>
+ 	</div>
+	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
+

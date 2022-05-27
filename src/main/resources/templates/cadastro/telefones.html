@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Telefones</title>
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	 <link rel="stylesheet" href="/materialize/css/styles.css">
+	 <style type="text/css">
+	 	table.striped>tbody>tr:nth-child(odd) {
+	 	background-color: rgba(211, 211, 211, 0.5);
+	 	}
+	 	
+	 	form input[type=submit] {
+	 		color: white;
+	 	}
+	 
+	 </style>
+</head>
+    <nav>
+    <div class="nav-wrapper" >
+      <a href="/" class="brand-logo">Garage Control</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/arearestrita">Home</a></li>
+        <li><a href="/listapessoas">Pessoas</a></li>
+        <li><a href="/">Produtos</a></li>
+        <li><a href="/">Manutenção</a></li>
+        <li><a href="/">Administração</a></li>
+        <li><a href="/logout">Sair do Sistema</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Home</a>
+        <a href="/listapessoas" class="breadcrumb">Pessoas</a>
+        <a href="/cadastropessoa" class="breadcrumb">Cadastrar Pessoa</a>
+        <a href="/listapessoas" class="breadcrumb">Lista Pessoas</a>
+      </div>
+    </div>
+  </nav>
+<body>     
+<div class="container">
+		<h1>Telefones</h1>
+		<h6>Adiciona os telefones da pessoa</h6>
+		<br>
+		<div th:each="p : ${pessoaobj}">
+		<div class="row">
+			<p>ID: <span th:text="${p.id}"></span></p>
+			<p>Nome: <span th:text="${p.nome}"></span></p>
+			<p>Identidade: <span th:text="${p.identidade}"></span></p>
+			<p>CPF: <span th:text="${p.cpf}"></span></p>
+			<p>CEP: <span th:text="${p.cep}"></span></p>
+			<p>Rua: <span th:text="${p.rua}"></span></p>
+			<p>Número: <span th:text="${p.numero}"></span></p>
+			<p>Bairro: <span th:text="${p.bairro}"></span></p>
+			<p>Complemento: <span th:text="${p.comp}"></span></p>
+			<p>Cidade: <span th:text="${p.cidade}"></span></p>
+			<p>Estado: <span th:text="${p.uf}"></span></p>
+		</div>
+	</div>
+	<h5>Telefones:</h5>
+	
+		<div th:each="m : ${msg}">
+			<span th:text="${m}"></span>
+		</div>
+	<table class="striped">
+		<tr th:each="fone : ${telefones}">
+			<td th:text="${fone.numero}">
+			<td th:text="${fone.tipo}">
+			<td><a th:href="@{/removertelefone/{idtelefone}(idtelefone=${fone.id})}">Excluir</a> </td>
+		</tr>
+	</table>
+	<div class="row">
+		<form th:action="@{/addfonepessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" 
+						method="post" class="col 12" onsubmit="return validarCampos()? true : false">
+			<div class="row">
+				<div class="input-field col s6">
+					<label class="active" for="numero">Número:</label>
+					<input id="numero" name="numero" class="validate">
+				</div>
+				<div class="input-field col s6">
+					<label class="active" for="tipo">Tipo:</label>
+					<input id="tipo" name="tipo" class="validate">
+				</div>
+				<input type="submit" value="Adicionar" class="waves-effect waves-light btn">
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	function validarCampos() {
+		
+		numero = document.getElementById('numero').value;
+		tipo = document.getElementById('tipo').value;
+		
+		if (numero === ''){
+			alert('O Número do telefone dever ser informado')
+			return false;
+		} else if (tipo ---'') {
+			alert('O Tipo do telefone dever ser informado')
+			return false;
+		}
+		
+		return true;
+	}
+	
+	</script>
+	
+</div>
+</body>
+</html>
