@@ -35,7 +35,7 @@ public class PessoaController {
 	/* ***Direciona para a página Index*** */
 	@GetMapping(path = "/meuprojeto")
 	public String index() {
-		return "index";
+		return "/index.html";
 	}
 	
 	/* ***Direciona para de cadastro*** */

@@ -1,6 +1,6 @@
 /* geral */
 
-body,
+
 p,
 h1,
 h2,
@@ -74,7 +74,10 @@ h2 {
     background-image: url('../img/bg-projeto.jpg');
     background-size: cover;
     padding-top: 15vh;
+    
 }
+
+
 
 #banner-info {
     width: 40%;
