@@ -3,6 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+
 <title>Telefones</title>
 
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,7 +23,7 @@
 </head>
     <nav>
     <div class="nav-wrapper" >
-      <a href="/" class="brand-logo">Garage Control</a>
+      <a href="/meuprojeto" class="brand-logo">Garage Control</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/arearestrita">Home</a></li>
         <li><a href="/listapessoas">Pessoas</a></li>
@@ -36,14 +37,14 @@
   <nav>
     <div class="nav-wrapper">
       <div class="col s12">
-        <a href="/" class="breadcrumb">Home</a>
-        <a href="/listapessoas" class="breadcrumb">Pessoas</a>
+        <a href="/meuprojeto" class="breadcrumb">Home</a>
         <a href="/cadastropessoa" class="breadcrumb">Cadastrar Pessoa</a>
         <a href="/listapessoas" class="breadcrumb">Lista Pessoas</a>
       </div>
     </div>
   </nav>
 <body>     
+<br>
 <div class="container">
 		<h1>Telefones</h1>
 		<h6>Adiciona os telefones da pessoa</h6>
@@ -75,6 +76,7 @@
 			<td><a th:href="@{/removertelefone/{idtelefone}(idtelefone=${fone.id})}">Excluir</a> </td>
 		</tr>
 	</table>
+	<br><br>
 	<div class="row">
 		<form th:action="@{/addfonepessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" 
 						method="post" class="col 12" onsubmit="return validarCampos()? true : false">

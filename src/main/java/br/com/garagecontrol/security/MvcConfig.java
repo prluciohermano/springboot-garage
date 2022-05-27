@@ -11,7 +11,6 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/materialize/**")
-          .addResourceLocations("classpath:/static/materialize/")
-          .addResourceLocations("classpath:/templates/"); 
+          .addResourceLocations("classpath:/static/materialize/", "classpath:/templates/"); 
     }
 }

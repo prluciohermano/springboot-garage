@@ -33,27 +33,33 @@ public class PessoaController {
 	private TelefoneRepository telefoneRepository;
 
 	/* ***Direciona para a página Index*** */
-	@RequestMapping(method=RequestMethod.GET, value="/cadastropessoa")
+	@GetMapping(path = "/meuprojeto")
+	public String index() {
+		return "index";
+	}
+	
+	/* ***Direciona para de cadastro*** */
+	@GetMapping("/cadastropessoa")
 	public ModelAndView inicio() {
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		modelAndView.addObject("pessoaobj", new Pessoa());
 		return modelAndView;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/arearestrita")
+	@GetMapping("/arearestrita")
 	public ModelAndView arearestrita() {
 		ModelAndView modelAndView = new ModelAndView("cadastro/arearestrita");
 		return modelAndView;
 	}
 	
 	/* ***Captura os dados na tela e Salva uma pessoa no banco*** */
-	@RequestMapping(method = RequestMethod.POST, value = "/salvarpessoa")
+	@PostMapping("/salvarpessoa")
 	public ModelAndView salvarPessoa(@Valid Pessoa pessoa, BindingResult bindingResult) {
 		
 		pessoa.setTelefones(telefoneRepository.getTelefones(pessoa.getId()));
 		
 		if (bindingResult.hasErrors()) { // Validação de Erros
-			ModelAndView modelAndView = new ModelAndView("cadastro/listapessoas");
+			ModelAndView modelAndView = new ModelAndView("/cadastro/listapessoas");
 			Iterable<Pessoa> pessoasIt = pessoaRepository.findAll();
 			modelAndView.addObject("pessoas", pessoasIt);
 			modelAndView.addObject("pessoaobj", pessoa);
