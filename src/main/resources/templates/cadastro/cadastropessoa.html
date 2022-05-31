@@ -9,11 +9,10 @@
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-	<link rel="stylesheet" href="/materialize/css/styles.css">
-
+	
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+<link href="/materialize/css/styles.css" rel="stylesheet" type="text/css" media="all"/>
     
 <style type="text/css">
 table.striped>tbody>tr:nth-child(odd) {
@@ -94,7 +93,7 @@ form input[type=submit] {
 			<label for="cep" class="active">CEP:</label>
 			<input placeholder="Informe o CEP" name="cep" th:field="*{cep}" id="cep" class="validate" type="text">
 			</div>
-			<div class="input-field col s5">
+			<div class="input-field col s4">
 			<label for="rua" class="active">Rua:</label>
 			<input placeholder="Informe o nome da rua" name="rua" th:field="*{rua}" id="rua" class="validate" type="text">
 			</div>
@@ -102,11 +101,19 @@ form input[type=submit] {
 			<label for="numero" class="active">Número:</label>
 			<input placeholder="Informar número" name="numero" th:field="*{numero}" id="numero" class="validate" type="text">
 			</div>	
-			<div class="input-field col s3">
+			<div class="input-field col s2">
 			<label for="bairro" class="active">Bairro:</label>
 			<input placeholder="Informe o bairro" name="bairro" th:field="*{bairro}" id="bairro" class="validate" type="text">
 			</div>
-			<div class="input-field col s8">
+			<div class="input-field col s2">
+			<label for="profissao" class="active">Profissão:</label>
+			    <select class="browser-default" th:field="*{profissao}" id="profissao">
+			     <option value="">-- Selecione --</option>
+			      <option th:each = "p : ${profissoes}" th:value="${p.id}" th:text="${p.nome}">
+			      
+			    </select>
+			  </div>			
+			<div class="input-field col s6">
 			<label for="comp" class="active">Complemento:</label>
 			<input placeholder="Informe o complemento" name="comp" th:field="*{comp}" id="comp" class="validate" type="text">
 			</div>
@@ -118,6 +125,15 @@ form input[type=submit] {
 			<label for="uf" class="active">Estado:</label>
 			<input placeholder="Informar Estado" name="uf" th:field="*{uf}" id="uf" class="validate" type="text">
 			</div>
+			<div class="input-field col s2">
+			<label for="tipo" class="active">Tipo:</label>
+			    <select class="browser-default" th:field="*{tipo}" id="tipo">
+			     <option value="">-- Selecione --</option>
+			      <option th:each = "t : ${T(br.com.garagecontrol.entity.Tipo).values()}" 
+			      	th:value="${t.valor}" th:text="${t.nome}">
+			      
+			    </select>
+			  </div>
 			</div>
 			<div class="row">
 			<div class="input-field col s2">

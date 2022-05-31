@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+<meta charset="UTF-8">
     <title>Garage Control</title>
     
     <meta charset="UTF-8">
@@ -9,18 +10,14 @@
     <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Import materialize.css-->
- <!-- Compiled and minified CSS 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
- -->
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+ 
  <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen, projection" />
  <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css" media="screen, projection" />
 	
- <link rel="stylesheet" href="/materialize/css/styles.css">
+ <link href="/materialize/css/styles.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
-
-<body>
-    <header>
-    
    <nav>
     <div class="nav-wrapper" >
       <a href="/meuprojeto" class="brand-logo">Garage Control</a>
@@ -35,7 +32,7 @@
     </div>
   </nav>
 
-    </header>
+    <body>
     <!-- fim navbar -->
     <main>
         <!-- banner início -->
@@ -57,7 +54,7 @@
     <section id="skills-section">
         <div class="container">
             <div class="skills-container">
-                <img src="materialize/img/Computador.jpg" alt="Computador">
+                <img src="/materialize/img/Computador.jpg" alt="Computador">
                 <h3>Computadores</h3>
                 <p>Desenvolvido para todas as plataformas de computadores</p>
                 <p class="subtitle">Plataformas disponíveis:</p>
@@ -66,14 +63,14 @@
                 <p>Controle, manutenção e disponibilidade</p>
             </div>
             <div class="skills-container central">
-                <img src="materialize/img/Dispositivos.jpg" alt="dispositivo">
+                <img src="/materialize/img/Dispositivos.jpg" alt="dispositivo">
                 <h3>Dispositivos móveis</h3>
                 <p>Controle através de todos os dispositivos móveis</p>
                 <p class="subtitle">Tipos de dispositivos:</p>
                 <p>Celulares, Tablets, Ipads e muito mais.</p>
             </div>
             <div class="skills-container">
-                <img src="materialize/img/API.jpg" alt="API">
+                <img src="/materialize/img/API.jpg" alt="API">
                 <h3>API de Integração</h3>
                 <p>Com API de integração aos softwares existentes no mercado</p>
                 <p class="subtitle">Serviços de Cloud:</p>
@@ -100,26 +97,35 @@
         </div>
     </section>
      
-    <footer>
-        <h2>Me mande uma mensagem</h2>
-        <p>Caso queira falar sobre o projeto, contratar o serviço para sua empresa, ou falar conosco...</p>
-        <img src="materialize/img/carro2.png" alt="Perfil carro2">
-        <form action="envioemail" method="post">
-            <input type="text" name="name" placeholder="Seu nome">
-            <input type="email" name="email" placeholder="Seu e-mail">
-            <textarea name="msg" placeholder="Digite uma mensagem"></textarea>
-            <input type="submit" value="Enviar">
-        </form>
-        <p>Desenvolvido por <span class="detail">Lúcio Hermano Batista</span>
-            <br> Análise e Desenvolvimento de Sistemas - UNIGOIÁS
-        </p>
-        
-   
-    </footer>
+      <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Nossas redes sociais</h5>
+                <p class="grey-text text-lighten-4">Você pode falar conosco por todos os nossoas canais.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Linked in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 Copyright - Todos os direitos reservados!
+            <a class="grey-text text-lighten-4 right" href="#!">Política de privacidade</a>
+            </div>
+          </div>
+        </footer>
     <script type="text/javascript" src="/materialize/js/materialize.js"></script>
 	<!-- Compiled and minified JavaScript -->
-    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-     -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+     
 </body>
 
 </html>
