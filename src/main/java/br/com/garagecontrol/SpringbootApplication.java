@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EntityScan(basePackages = "br.com.garagecontrol.entity")
+@EntityScan(basePackages = { "br.com.garagecontrol.entity" })
 @ComponentScan(basePackages = { "br.com.garagecontrol.*" })
 @EnableJpaRepositories(basePackages = { "br.com.garagecontrol.repository" })
 @EnableTransactionManagement
@@ -28,39 +28,5 @@ public class SpringbootApplication implements WebMvcConfigurer {
 		registry.addViewController("/login").setViewName("/login");
 		registry.setOrder(Ordered.LOWEST_PRECEDENCE);
 	}
-}
-
-
-
-
-/*
-
-
-@SpringBootApplication
-@EntityScan(basePackages="br.com.garagecontrol.entity")
-@ComponentScan(basePackages= {"br.com.garagecontrol.*"})
-@EnableJpaRepositories(basePackages= {"br.com.garagecontrol.repository"})
-@EnableTransactionManagement
-@EnableWebMvc
-public class SpringbootApplication  {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootApplication.class, args);
-		
-		
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String result = encoder.encode("2201");
-		System.out.println(result);
-		
-	}
 	
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		
-		registry.addViewController("/login").setViewName("/login");
-		registry.setOrder(Ordered.LOWEST_PRECEDENCE);
-		
-	}
-
 }
-*/

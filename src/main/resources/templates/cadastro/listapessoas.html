@@ -3,14 +3,14 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-
 <meta charset="UTF-8">
 <title>Pessoas</title>
 	  <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/materialize/css/styles.css">
+	 
 	 <style type="text/css">
 	 	table.striped>tbody>tr:nth-child(odd) {
 	 	background-color: rgba(211, 211, 211, 0.5);
@@ -24,7 +24,7 @@
 </head>
     <nav>
     <div class="nav-wrapper" >
-      <a href="/" class="brand-logo">Garage Control</a>
+      <a href="/meuprojeto" class="brand-logo">Garage Control</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/arearestrita">Home</a></li>
         <li><a href="/listapessoas">Pessoas</a></li>
@@ -38,7 +38,7 @@
   <nav>
     <div class="nav-wrapper">
       <div class="col s12">
-        <a href="/" class="breadcrumb">Home</a>
+        <a href="/meuprojeto" class="breadcrumb">Home</a>
         <a href="/listapessoas" class="breadcrumb">Pessoas</a>
         <a href="/cadastropessoa" class="breadcrumb">Cadastrar Pessoa</a>
       </div>
@@ -46,6 +46,7 @@
   </nav>
 
 <body>
+<br>
 <div class="container">
         <!-- Page Content goes here -->
       
@@ -98,39 +99,37 @@
 		<div th:each="m : ${msg}">
 			<span th:text="${m}"></span>
 		</div>
-		<br />
-		<br>
-		
+		<input readonly="readonly"> <span>Campos de Pesquisa</span>
 			<div class="row" >
-			<fieldset>
-		<legend>Campos de Pesquisa</legend>
-				<form action="pesquisarpessoa" method="post" class="col s12">
+			<br><br>
+				<form action="pesquisarpessoa" method="post" class="col s12" id="pesquisarpessoa">
 					<div class="row">
-						<div class="input-field col s4">
+						<div class="input-field col s3">
 							<label for="nomepesquisa" class="active">Pesquisa por nome:</label>
 								<input name="nomepesquisa" id="nomepesquisa" class="validate">
 								</div>
 								
-								<div class="input-field col s4">
-							<label for="pesqsexo" class="active">Pesquisa Sexo</label>
+								<div class="input-field col s3">
+							<label for="pesqsexo" class="active">Pesquisa Gênero</label>
 						    <select	class="browser-default" name="pesqsexo" id="pesqsexo">
 								<option value="">-- Todos --</option>
 								<option value="MASCULINO">Masculino</option>
 								<option value="FEMININO">Feminino</option>
 							</select>
-						</div>
-								<div class="input-field col s4">
-								<input class="waves-effect waves-light btn" type="submit" value="Buscar">
+							</div>
+								<div class="input-field col s3">
+								<input class="btn-large waves-effect waves-light btn" type="submit" value="Buscar">
 								</div>
+								<div class="input-field col s3">
+								<input  class="btn-large waves-effect waves-light light red" type="submit"
+								 value="Imprimir PDF" onclick="document.getElementById('pesquisarpessoa').method='get'" >
+								 </div>
+								</div>
+							</form>
 						</div>
-					
-				</form>
-				</fieldset>
-			</div>
+				</div>
 		
-	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
-	<!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</div>
+	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
 </body>
 </html>

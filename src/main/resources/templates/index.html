@@ -5,107 +5,128 @@
 <head>
 <meta charset="UTF-8">
 <title>Garage Control</title>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="/materialize/css/styles.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+ <style type="text/css">
+	table.striped>tbody>tr:nth-child(odd) {
+	background-color: rgba(211, 211, 211, 0.5);
+}
+
+form input[type=submit] {
+	color: white;
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+}
+
+.bg {
+	background-image: url("/materialize/img/proj11.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100%;
+	background-attachment: fixed;
+	
+}
+</style>
+	</head>
+		<body>  
+		    <header>
+		   <nav>
+		    <div class="nav-wrapper" >
+		    
+		      <a href="/meuprojeto" class="brand-logo">Garage Control</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/arearestrita">Área Restrita</a></li>
+		        <li><a href="/logout">Sair do Sistema</a></li>
+		      </ul>
+		    </div>
+		  </nav>
+		    </header>
+		    <main>
+    <!-- Navbar goes here -->
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+	<div class="card-panel hoverable">Controle de carros no pátio</div>
+      <div class="col s12 m2 14" >
+      <div class="card-panel teal lighten-2">
+       <h6>MENU LATERAL</h6>
+       <blockquote>
+      This is an example quotation that uses the blockquote tag.
+    </blockquote>
     
-	<link rel="stylesheet" href="/materialize/css/styles.css">    
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-  	<link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+    
+       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
+       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
+	      
+    
 
-</head>
+		</div>
+      </div>
 
-<body>
-    <header>
-   <nav>
-    <div class="nav-wrapper" >
-      <a href="/" class="brand-logo">Garage Control</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/arearestrita">Área Restrita</a></li>
-        <li><a href="/logout">Sair do Sistema</a></li>
-      </ul>
-    </div>
-  </nav>
-    </header>
-    <main>
-        <div id="main-banner"> 
-        </div>
-        <section id="about-section">
-            <h2>Controle total de carros no pátio</h2>
-            <p>A vantagem é o controle de tudo a respeito da compra, venda, despesas, <br> lucro e tempo que o carro fica parado na garagem. <br> O sistema vai controlar o tempo que o carro fica na garagem, as despesas de manutenção, o custo final do carro,
-                a margem de lucro e o estoque de carros naquela garagem. Nosso software não irá fazer vendas e nem emitir nota fiscal. <br> Somente controle de estoque no pátio
-            </p>
-        </section>
-        <!-- about fim -->
-    </main>
-    <!-- skills inicio -->
-    <section id="skills-section">
-        <div class="container">
-            <div class="skills-container">
-                <img src="materialize/img/Computador.jpg" alt="Computador">
-                <h3>Computadores</h3>
-                <p>Desenvolvido para todas as plataformas de computadores</p>
-                <p class="subtitle">Plataformas disponíveis:</p>
-                <p>Windows, Linux, MAC OS</p>
-                <p class="subtitle">Pacote completo:</p>
-                <p>Controle, manutenção e disponibilidade</p>
-            </div>
-            <div class="skills-container central">
-                <img src="materialize/img/Dispositivos.jpg" alt="dispositivo">
-                <h3>Dispositivos móveis</h3>
-                <p>Controle através de todos os dispositivos móveis</p>
-                <p class="subtitle">Tipos de dispositivos:</p>
-                <p>Celulares, Tablets, Ipads e muito mais.</p>
-            </div>
-            <div class="skills-container">
-                <img src="materialize/img/API.jpg" alt="API">
-                <h3>API de Integração</h3>
-                <p>Com API de integração aos softwares existentes no mercado</p>
-                <p class="subtitle">Serviços de Cloud:</p>
-                <p>Serviço e servidores na nuvem para evitar altos custos de manutenção</p>
-                <p class="subtitle">Possibilidades:</p>
-                <p>conexão e integração total para quem já possui sistema de vendas</p>
-            </div>
-        </div>
-    </section>
-    <!-- skills fim -->
-    <!-- jobs inicio -->
-    <section id="jobs-section">
-        <h2>Veja nossa plataforma Garage Control:</h2>
-        <p>Aqui estão os detalhes do sistema que irá impactar o seu negócio, para ver mais <a href="#">clique aqui.</a></p>
-        <div class="job-container">
-            <div class="job-box proj1"></div>
-            <div class="job-box proj2"></div>
-            <div class="job-box proj3"></div>
-        </div>
-        <div class="job-container">
-            <div class="job-box proj4"></div>
-            <div class="job-box proj5"></div>
-            <div class="job-box proj6"></div>
-        </div>
-    </section>
-     
-    <footer>
-        <h2>Me mande uma mensagem</h2>
-        <p>Caso queira falar sobre o projeto, contratar o serviço para sua empresa, ou falar conosco...</p>
-        <img src="materialize/img/carro2.png" alt="Perfil carro2">
-        <form action="envioemail" method="post">
-            <input type="text" name="name" placeholder="Seu nome">
-            <input type="email" name="email" placeholder="Seu e-mail">
-            <textarea name="msg" placeholder="Digite uma mensagem"></textarea>
-            <input type="submit" value="Enviar">
-        </form>
-        <p>Desenvolvido por <span class="detail">Lúcio Hermano Batista</span>
-            <br> Análise e Desenvolvimento de Sistemas - UNIGOIÁS
-        </p>
+      <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <h1>Corpo do Projeto</h1>
         
-   
-    </footer>
-   
-	<script type="text/javascript" src="/materialize/js/materialize.js"></script>
-	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
-</body>
+        <p class="flow-text">ma falha comum que vimos em muitos frameworks é a falta de suporte para texto realmente responsivo. Enquanto os elementos na página são redimensionados com fluidez, o texto ainda é redimensionado em uma base fixa. Para melhorar esse problema, para páginas com muito texto, criamos uma classe que dimensiona com fluidez o tamanho do texto e a altura da linha para otimizar a legibilidade do usuário.
+     O comprimento da linha fica entre 45-80 caracteres e a altura da linha aumenta em telas menores.</p>
+ 
+      </div>
 
+    </div>
+  
+
+    
+    
+  </main>    
+    <footer class="page-footer">
+   
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Nossas redes sociais</h5>
+                <p class="grey-text text-lighten-4">Você pode falar conosco por todos os nossoas canais.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/prluciohermano/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/prluciohermano">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/prluciohermano">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/l%C3%BAcio-hermano-batista-190971142/">Linked in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 Copyright - Todos os direitos reservados!
+            <a class="grey-text text-lighten-4 right" href="#!">Política de privacidade</a>
+            </div>
+          </div>
+        </footer>
+    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
 </html>
 
