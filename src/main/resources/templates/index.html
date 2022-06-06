@@ -1,132 +1,271 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
 <title>Garage Control</title>
-
- <!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link rel="stylesheet" href="/materialize/css/styles.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
- <style type="text/css">
-	table.striped>tbody>tr:nth-child(odd) {
-	background-color: rgba(211, 211, 211, 0.5);
-}
-
-form input[type=submit] {
-	color: white;
-}
-
-body, html {
-	height: 100%;
-	margin: 0;
-}
-
-.bg {
-	background-image: url("/materialize/img/proj11.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100%;
-	background-attachment: fixed;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/css/styles.css">
+	<link rel="icon" href="estilo/imagens/clienteIcon.png">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="estilo/css/bootstrap.min.css">
 	
-}
-</style>
-	</head>
-		<body>  
-		    <header>
-		   <nav>
-		    <div class="nav-wrapper" >
-		    
-		      <a href="/meuprojeto" class="brand-logo">Garage Control</a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="/arearestrita">Área Restrita</a></li>
-		        <li><a href="/logout">Sair do Sistema</a></li>
-		      </ul>
-		    </div>
-		  </nav>
-		    </header>
-		    <main>
-    <!-- Navbar goes here -->
-
-    <!-- Page Layout here -->
-    <div class="row">
-
-	<div class="card-panel hoverable">Controle de carros no pátio</div>
-      <div class="col s12 m2 14" >
-      <div class="card-panel teal lighten-2">
-       <h6>MENU LATERAL</h6>
-       <blockquote>
-      This is an example quotation that uses the blockquote tag.
-    </blockquote>
-    
-    
-       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Pessoas</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Produtos</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Relatórios</a>
-       <p><a href="/meuprojeto" class="breadcrumb">Manutenção</a>
-	      
-    
-
-		</div>
-      </div>
-
-      <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-        <h1>Corpo do Projeto</h1>
+</head>
+<body>
+	<!-- navbar -->
+    <header id="navbar">
+        <img src="estilo/img/carro2.png" alt="carro1">
+        <h2>GARAGE CONTROL</h2>
         
-        <p class="flow-text">ma falha comum que vimos em muitos frameworks é a falta de suporte para texto realmente responsivo. Enquanto os elementos na página são redimensionados com fluidez, o texto ainda é redimensionado em uma base fixa. Para melhorar esse problema, para páginas com muito texto, criamos uma classe que dimensiona com fluidez o tamanho do texto e a altura da linha para otimizar a legibilidade do usuário.
-     O comprimento da linha fica entre 45-80 caracteres e a altura da linha aumenta em telas menores.</p>
- 
-      </div>
+        <nav>
+            <ul id="navbar-list">
+            	<li><a href="/meuprojeto">Home</a></li>
+                <li><a href="/arearestrita">Área Restrita</a></li>
+                <li><a href="/listapessoas">Pessoas</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="/logout">Sair do Sistema</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- fim navbar -->
+    <main>
+        <!-- banner início -->
+        <div id="main-banner">
+            <div id="banner-info">
+               <!--   <p>Controle de Pátio</p> -->
+            </div>
+        </div>
+        <!-- banner fim -->
+        <!-- about inicio -->
+        <section id="about-section">
+            <h2>Controle total de carros no pátio</h2>
+            <p>A vantagem é o controle de tudo a respeito da compra, venda, despesas, <br> lucro e tempo que o carro fica parado na garagem. <br> O sistema vai controlar o tempo que o carro fica na garagem, as despesas de manutenção, o custo final do carro,
+                a margem de lucro e o estoque de carros naquela garagem. Nosso software não irá fazer vendas e nem emitir nota fiscal. <br> Somente controle de estoque no pátio
 
-    </div>
+            </p>
+        </section>
+        <!-- about fim -->
+    </main>
+    <!-- skills inicio -->
+    <section id="skills-section">
+        <div class="container">
+            <div class="skills-container">
+                <img src="estilo/img/Computador.jpg" alt="Computador">
+                <h3>Computadores</h3>
+                <p>Desenvolvido para todas as plataformas de computadores</p>
+                <p class="subtitle">Plataformas disponíveis:</p>
+                <p>Windows, Linux, MAC OS</p>
+                <p class="subtitle">Pacote completo:</p>
+                <p>Controle, manutenção e disponibilidade</p>
+            </div>
+            <div class="skills-container central">
+                <img src="estilo/img/Dispositivos.jpg" alt="dispositivo">
+                <h3>Dispositivos móveis</h3>
+                <p>Controle através de todos os dispositivos móveis</p>
+                <p class="subtitle">Tipos de dispositivos:</p>
+                <p>Celulares, Tablets, Ipads e muito mais.</p>
+            </div>
+            <div class="skills-container">
+                <img src="estilo/img/API.jpg" alt="API">
+                <h3>API de Integração</h3>
+                <p>Com API de integração aos softwares existentes no mercado</p>
+                <p class="subtitle">Serviços de Cloud:</p>
+                <p>Serviço e servidores na nuvem para evitar altos custos de manutenção</p>
+                <p class="subtitle">Possibilidades:</p>
+                <p>conexão e integração total para quem já possui sistema de vendas</p>
+            </div>
+        </div>
+    </section>
+    <!-- skills fim -->
+    <!-- jobs inicio -->
+    <section id="jobs-section">
+        <h2>Veja nossa plataforma Garage Control:</h2>
+        <p>Aqui estão os detalhes do sistema que irá impactar o seu negócio, para ver mais <a href="#">clique aqui.</a></p>
+        <div class="job-container">
+            <div class="job-box proj1"></div>
+            <div class="job-box proj2"></div>
+            <div class="job-box proj3"></div>
+        </div>
+        <div class="job-container">
+            <div class="job-box proj4"></div>
+            <div class="job-box proj5"></div>
+            <div class="job-box proj6"></div>
+        </div>
+    </section>
+    <!-- jobs fim -->
+    <!-- footer inicio -->
+    <footer>
+        <h2>Me mande uma mensagem</h2>
+        <p>Caso queira falar sobre o projeto, contratar o serviço para sua empresa, ou falar conosco...</p>
+        <img src="estilo/img/carro2.png" alt="Perfil carro2">
+        <form action="EmailController" method="post" name="teste">
+            <input type="text" name="name" placeholder="Seu nome">
+            <input type="email" name="email" placeholder="Seu e-mail">
+            <textarea name="msg" placeholder="Digite uma mensagem"></textarea>
+            <div class="btns">
+            <button type="submit" class="efeito efeito-3">Enviar Mensagem</button>            
+            </div>
+            
+        </form>
+        
+        <p>Desenvolvido por <span class="detail">Lúcio Hermano Batista</span>
+            <br> Análise e Desenvolvimento de Sistemas - UNIGOIÁS
+        </p>
+    </footer>
+    <!-- footer fim -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script type="text/javascript" src="estilo/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html> -->
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" -->
+<!-- 	xmlns:th="http://www.thymeleaf.org" -->
+<!-- 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> -->
+	
+<!-- <head> -->
+<!-- <meta charset="UTF-8"> -->
+<!-- <title>Garage Control</title> -->
+	
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!-- 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+<!-- 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="estilo/css/styles.css">	 -->
+	
+<!-- <style type="text/css"> -->
+/* 	table.striped>tbody>tr:nth-child(odd) { */
+/* 	background-color: rgba(211, 211, 211, 0.5); */
+/* } */
+
+/* form input[type=submit] { */
+/* 	color: white; */
+/* } */
+
+/* body, html { */
+/* 	height: 100%; */
+/* 	margin: 0; */
+/* } */
+
+/* .bg { */
+/* 	background-image: url("/estilo/img/proj11.jpg"); */
+/* 	background-repeat: no-repeat; */
+/* 	background-size: cover; */
+/* 	background-size: 100%; */
+/* 	background-attachment: fixed; */
+	
+/* } */
+<!-- </style> -->
+<!-- 	</head> -->
+<!-- 	<!-- Navbar goes here --> -->
+<!--   <nav class="navbar navbar-expand-lg bg-dark"> -->
+<!--   <div class="container-fluid"> -->
+<!--   <img th:src="@{estilo/img/carro1.jpg}"> -->
+<!--     <a class="navbar-brand" href="/meuprojeto">Garage Control</a> -->
+<!--     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation"> -->
+<!--       <span class="navbar-toggler-icon"></span> -->
+<!--     </button> -->
+<!--     <div class="collapse navbar-collapse" id="navbarScroll"> -->
+<!--       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"> -->
+<!--         <li class="nav-item"> -->
+<!--           <a class="nav-link active" aria-current="page" href="/arearestrita">Home</a> -->
+<!--         </li> -->
+<!--         <li class="nav-item dropdown"> -->
+<!--           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
+<!--             Pessoas -->
+<!--           </a> -->
+<!--           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown"> -->
+            
+<!--             <li><a class="dropdown-item" href="/listapessoas">Lista Pessoas</a></li> -->
+<!--             <li><hr class="dropdown-divider"></li> -->
+<!--             <li><a class="dropdown-item" href="/cadastropessoa">Nova Pessoa</a></li> -->
+<!--           </ul> -->
+<!--         </li> -->
+<!--         <li class="nav-item"> -->
+<!--           <a class="nav-link active" href="#">Produtos</a> -->
+<!--         </li> -->
+<!--         <li class="nav-item"> -->
+<!--           <a class="nav-link active" href="#">Manutenção</a> -->
+<!--         </li>         -->
+<!--        </ul>  -->
+<!--       <form class="d-flex" role="search"> -->
+<!--         <input class="form-control me-2" type="search" placeholder="Digite para busca" aria-label="Search"> -->
+<!--         <button class="btn btn-outline-primary" type="submit">Procurar</button> -->
+<!--       </form> -->
+<!--        <ul class="nav justify-content-end">    -->
+<!--          <li class="nav-item" > -->
+<!--           <a class="nav-link active" href="/logout">Sair do Sistema</a> -->
+<!--         </li> -->
+<!--          </ul> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </nav> -->
+<!-- <body>   -->
+<!-- <img th:src="@{estilo/img/carro1.jpg}">  -->
+<!--     <header> -->
+		
+<!-- 		 </header> -->
+<!-- 	 <main> -->
+<!--     Page Layout here -->
+<!--     <div class="row"> -->
+
+<!-- 	<div class="card-panel hoverable">Controle de carros no pátio</div> -->
+<!--       <div class="col s12 m2 14" > -->
+<!--       <div class="card-panel teal lighten-2"> -->
+<!--        <h6>MENU LATERAL</h6> -->
+<!--        <blockquote> -->
+<!--       This is an example quotation that uses the blockquote tag. -->
+<!--     </blockquote> -->
+    
+
+<!-- 		</div> -->
+<!--       </div> -->
+
+<!--       <div class="col s12 m8 l9"> Note that "m8 l9" was added -->
+<!--         <h1>Corpo do Projeto</h1> -->
+        
+<!--         <p class="flow-text">ma falha comum que vimos em muitos frameworks é a falta de suporte para texto realmente responsivo. Enquanto os elementos na página são redimensionados com fluidez, o texto ainda é redimensionado em uma base fixa. Para melhorar esse problema, para páginas com muito texto, criamos uma classe que dimensiona com fluidez o tamanho do texto e a altura da linha para otimizar a legibilidade do usuário. -->
+<!--      O comprimento da linha fica entre 45-80 caracteres e a altura da linha aumenta em telas menores.</p> -->
+ 
+<!--       </div> -->
+
+<!--     </div> -->
   
 
     
     
-  </main>    
-    <footer class="page-footer">
+<!--   </main>     -->
+<!--     <footer class="page-footer"> -->
    
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Nossas redes sociais</h5>
-                <p class="grey-text text-lighten-4">Você pode falar conosco por todos os nossoas canais.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/prluciohermano/">Instagram</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/prluciohermano">Facebook</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/prluciohermano">Twitter</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/l%C3%BAcio-hermano-batista-190971142/">Linked in</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2022 Copyright - Todos os direitos reservados!
-            <a class="grey-text text-lighten-4 right" href="#!">Política de privacidade</a>
-            </div>
-          </div>
-        </footer>
-    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
-	<!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-</html>
+<!--           <div class="container"> -->
+<!--             <div class="row"> -->
+<!--               <div class="col l6 s12"> -->
+<!--                 <h5 class="white-text">Nossas redes sociais</h5> -->
+<!--                 <p class="grey-text text-lighten-4">Você pode falar conosco por todos os nossoas canais.</p> -->
+<!--               </div> -->
+<!--               <div class="col l4 offset-l2 s12"> -->
+<!--                 <h5 class="white-text">Links</h5> -->
+<!--                 <ul> -->
+<!--                   <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/prluciohermano/">Instagram</a></li> -->
+<!--                   <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/prluciohermano">Facebook</a></li> -->
+<!--                   <li><a class="grey-text text-lighten-3" href="https://twitter.com/prluciohermano">Twitter</a></li> -->
+<!--                   <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/l%C3%BAcio-hermano-batista-190971142/">Linked in</a></li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--           <div class="footer-copyright"> -->
+<!--             <div class="container"> -->
+<!--             © 2022 Copyright - Todos os direitos reservados! -->
+<!--             <a class="grey-text text-lighten-4 right" href="#!">Política de privacidade</a> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </footer> -->
+  
+<!-- </body> -->
+<!-- </html> -->
 

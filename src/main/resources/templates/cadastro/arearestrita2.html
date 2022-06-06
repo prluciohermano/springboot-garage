@@ -1,89 +1,47 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="pt-br">
 
 <head>
 <meta charset="UTF-8">
     <title>Garage Control</title>
-     
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="estilo/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="/estilo/css/styles.css"/>
+    <!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+ 
+ <link type="text/css" rel="stylesheet" href="/estilo/css/materialize.min.css" media="screen, projection" />
+ <link type="text/css" rel="stylesheet" href="/estilo/css/materialize.css" media="screen, projection" />
 	
+ <link href="/estilo/css/styles.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
-
-<nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container-fluid">
- <img src="@{classpath:/resources/estilo/imagens/carro1.jpg}">
-    <a class="navbar-brand" href="/meuprojeto">Garage Control</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/arearestrita">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pessoas
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            
-            <li><a class="dropdown-item" href="/listapessoas">Lista Pessoas</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/cadastropessoa">Nova Pessoa</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Produtos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Manutenção</a>
-        </li>
-       </ul> 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Digite para busca" aria-label="Search">
-        <button class="btn btn-outline-primary" type="submit">Procurar</button>
-      </form>
-       <ul class="nav justify-content-end">   
-         <li class="nav-item" >
-          <a class="nav-link active" href="/logout">Sair do Sistema</a>
-        </li>
-         </ul>
+   <nav>
+    <div class="nav-wrapper" >
+      <a href="/meuprojeto" class="brand-logo">Garage Control</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/arearestrita">Home</a></li>
+        <li><a href="/listapessoas">Pessoas</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Manutenção</a></li>
+        <li><a href="#">Administração</a></li>
+        <li><a href="/logout">Sair do Sistema</a></li>
+      </ul>
     </div>
-  </div>
-</nav>
-
-<!--    <nav> -->
-<!--     <div class="nav-wrapper" > -->
-<!--       <a href="/meuprojeto" class="brand-logo">Garage Control</a> -->
-<!--       <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
-<!--         <li><a href="/arearestrita">Home</a></li> -->
-<!--         <li><a href="/listapessoas">Pessoas</a></li> -->
-<!--         <li><a href="#">Produtos</a></li> -->
-<!--         <li><a href="#">Manutenção</a></li> -->
-<!--         <li><a href="#">Administração</a></li> -->
-<!--         <li><a href="/logout">Sair do Sistema</a></li> -->
-<!--       </ul> -->
-<!--     </div> -->
-<!--   </nav> -->
+  </nav>
 
     <body>
     <!-- fim navbar -->
-<!--     <img th:src="@{/estilo/img/carro1.jpg}"> -->
     <main>
         <!-- banner início -->
-        <div id="main-banner" class="d-flex flex-colum">
+        <div id="main-banner">
             
         </div>
         <!-- banner fim -->
         <!-- about inicio -->
-        <section id="about-section" class="d-flex flex-colum">
+        <section id="about-section">
             <h2>Controle total de carros no pátio</h2>
             <p>A vantagem é o controle de tudo a respeito da compra, venda, despesas, <br> lucro e tempo que o carro fica parado na garagem. <br> O sistema vai controlar o tempo que o carro fica na garagem, as despesas de manutenção, o custo final do carro,
                 a margem de lucro e o estoque de carros naquela garagem. Nosso software não irá fazer vendas e nem emitir nota fiscal. <br> Somente controle de estoque no pátio
@@ -93,7 +51,7 @@
         <!-- about fim -->
     </main>
     <!-- skills inicio -->
-    <section id="skills-section" class="d-flex flex-colum">
+    <section id="skills-section">
         <div class="container">
             <div class="skills-container">
                 <img src="/estilo/img/Computador.jpg" alt="Computador">
@@ -111,7 +69,7 @@
                 <p class="subtitle">Tipos de dispositivos:</p>
                 <p>Celulares, Tablets, Ipads e muito mais.</p>
             </div>
-            <div class="skills-container" >
+            <div class="skills-container">
                 <img src="/estilo/img/API.jpg" alt="API">
                 <h3>API de Integração</h3>
                 <p>Com API de integração aos softwares existentes no mercado</p>
@@ -124,7 +82,7 @@
     </section>
     <!-- skills fim -->
     <!-- jobs inicio -->
-    <section id="jobs-section" class="d-flex flex-colum">
+    <section id="jobs-section">
         <h2>Veja nossa plataforma Garage Control:</h2>
         <p>Aqui estão os detalhes do sistema que irá impactar o seu negócio, para ver mais <a href="#">clique aqui.</a></p>
         <div class="job-container">
@@ -166,7 +124,7 @@
         </footer>
     <script type="text/javascript" src="/estilo/js/materialize.js"></script>
 	<!-- Compiled and minified JavaScript -->
-<!--      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
      
 </body>
 
